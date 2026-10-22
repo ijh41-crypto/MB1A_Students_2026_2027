@@ -1,0 +1,28 @@
+---
+title: "ukhsa data analysis"
+format: html
+---
+
+---
+title: "Practical_1_Introduction_to_R/ukhsa_data_analysis.qmd"
+format: html
+---
+I selected a dataset on rate of access antibiotics use in all care settings in Defined Daily Doses per 1000 inhabitants per day.
+```{r}
+library(tidyverse)
+library(gt)
+antibiotics <- read_csv("data/week1proj.csv")
+gt(antibiotics)
+```
+```{r}
+antibiotics <- read_csv("data/week1proj.csv")
+ggplot(antibiotics, aes(
+  x=date,
+  y=metric_value
+))+
+  geom_line(colour="blue")+
+  xlab("Date")+
+  ylab("DID")+
+  ggtitle("Rate of Antibiotic Consumption")
+```
+
