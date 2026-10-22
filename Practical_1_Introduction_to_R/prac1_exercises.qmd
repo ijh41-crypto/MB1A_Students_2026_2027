@@ -1,0 +1,108 @@
+---
+title: "Practical_1_Introduction_to_R/prac1_exercises.qmd"
+format: html
+---
+```{r}
+library(tidyverse)
+library(gt)
+```
+```{r}
+round(3.14159)
+round(3.1459, digits=2)
+```
+```{r}
+print(seq(1,10,2))
+print(seq(by=5, to=15, from=5))
+```
+```{r}
+print(rep(2,5))
+print(rep(x=2, times=5))
+print(rep(5,7))
+print(rep(x=5, times=7))
+```
+```{r}
+my_variable<-12
+my_variable<-10
+print(my_variable)
+```
+4e-3 means 4x(10 to the power of -3)
+```{r}
+x<-TRUE
+print(x)
+x<-FALSE
+print(x)
+```
+```{r}
+x<-"hi there"
+print(class(x))
+x<-1513871
+print(class(x))
+x<-FALSE
+print(class(x))
+```
+```{r}
+batch1_cell_ID<-"CX1"
+batch2_cell_ID<-"CX2"
+batch1_treated<-TRUE
+batch2_treated<-FALSE
+batch1_num_cells_before<-5415
+batch2_num_cells_before<-8123
+batch1_num_cells_after<-1432
+batch2_num_cells_after<-7543
+```
+Practicing making vectors.
+```{r}
+my_first_vector<-c(1,5,9)
+print(my_first_vector)
+character_vec<-c("hello", "this", "is", "a", "character", "vector")
+print(character_vec)
+logical_vec<-c(TRUE, FALSE, TRUE)
+print(logical_vec)
+x<-1
+y<-2
+z<-3
+xyz_vec<-c(x,y,z)
+```
+```{r}
+cell_ID_vec<-c("CX1", "CX2")
+treated_vec<-c(TRUE, FALSE)
+num_cells_before_vec<-c(5415, 8123)
+num_cells_after_vec<-c(11432, 7543)
+all_my_pets<-c("dog", "horse", "guinea pig", "chicken", "cat")
+print(all_my_pets[4])
+```
+Building data frames
+```{r}
+my_data_frame<-tibble(
+  fruit = c("apple", "pear", "banana"),
+  length = c(22, 30, 55),
+  weight = c(150, 165, 170)
+)
+print(my_data_frame)
+```
+```{r}
+my_data_frame<-tibble(
+  fruit=c("apple","pear","banana"),
+  length=c(22,30,55),
+  weight=c(150,165,170)
+)
+gt(my_data_frame)
+```
+```{r}
+radiation_data_frame<-tibble(
+  cell_ID=c("CX1","CX2"),
+  treated=c(TRUE,FALSE),
+  num_cells_before=c(5415, 8123),
+  num_cells_after=c(1432, 7543)
+)
+gt(radiation_data_frame)
+  
+```
+```{r}
+weather<-read_csv("data/weather_data.csv")
+gt(weather)
+```
+
+
+
+
